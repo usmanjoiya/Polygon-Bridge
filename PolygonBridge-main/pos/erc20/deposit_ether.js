@@ -2,6 +2,12 @@ const { getPOSClient, from } = require('../../utils');
 
 const execute = async () => {
   const client = await getPOSClient();
+  
+  const result = await client.depositEther(100, from);
+
+  const txHash = await result.getTransactionHash();
+  console.log("txHash", txHash);
+  const receipt = await result.getReceipt();
   const result = await client.depositEther(100, from);
 
   const txHash = await result.getTransactionHash();
