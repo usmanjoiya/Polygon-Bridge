@@ -5,9 +5,8 @@ const execute = async () => {
   const client = await getPOSClient();
   const erc20Token = client.erc20(pos.child.erc20);
 
-  const result = await erc20Token.getBalance(from);
-
-  console.log("result", result);
+  const result = await erc20Token.getbalance(fromm);
+console.log("result", result);
 
 }
 execute().then(() => {
